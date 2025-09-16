@@ -1,0 +1,18 @@
+/* Quita márgenes y padding por defecto */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Asegúrate de que root ocupe toda la pantalla */
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+
+body {
+width: 100; 
+ background: linear-gradient(135deg, #60a5ea, #d9e4f5);
+}

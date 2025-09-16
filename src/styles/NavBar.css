@@ -1,0 +1,36 @@
+.navbar {
+  width: 100%;                 /* Ocupa todo el ancho */
+  display: flex;                /* Elementos en fila */
+  justify-content: space-between; /* Logo a la izq, links a la der */
+  align-items: center;          /* Centra verticalmente */
+  padding: 15px 30px;
+  box-sizing: border-box;       /* Respeta el padding sin desbordar */
+}
+
+.navbar-header{
+    margin: 0;
+}
+
+
+.logo {
+  display: flex;                  /* Logo + texto en fila */
+  align-items: center;
+  gap: 10px;                      /* Espacio entre imagen y texto */
+}
+
+.logo img {
+  width: 40px;
+  height: 40px;
+}
+
+.links a {
+  margin-left: 20px;              /* Separación entre links */
+  text-decoration: none;          /* Sin subrayado */
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.links a:hover {
+  color: #f39c12;                 /* Cambia de color al pasar el mouse */
+}
