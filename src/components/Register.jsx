@@ -17,7 +17,7 @@ function Register(){
     const handleSubmit = async(e) => {
         e.preventDefault();
         try{
-            const user = await register({correo,contraseña,nombres,apellidos});
+            await register({correo,contraseña,nombres,apellidos});
             toast.success("Registro exitoso 🎉");
             setTimeout(() => navigate("/"), 2000); // redirige después de 2 seg
         }catch(err){
@@ -49,12 +49,14 @@ function Register(){
                      placeholder="Contraseña"
                      value={contraseña}
                      onChange={(e)=> setContraseña(e.target.value)} />
+                     <div className="buttons">
                      <button className="registrarse" type="submit">
                         Registrarme
                      </button>
                      <button className="regresar" type="button" onClick={()=>navigate("/")}>
                         Regresar
                      </button>
+                     </div>
                 </form>
             </div>
         </div>

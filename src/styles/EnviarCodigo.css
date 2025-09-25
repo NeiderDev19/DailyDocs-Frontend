@@ -1,0 +1,105 @@
+.container-enviarCodigo{
+    
+}
+
+.sections{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 55px;
+    background-color: #fff;
+    border-radius: 1.5rem;
+    padding: 50px 50px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15); /* sombra suave */
+    transition: transform 0.2s ease-in-out;
+    max-width: 600px;
+    width: 100%;
+}
+
+
+.recuperar form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.recuperar h2{
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-family:Arial, Helvetica, sans-serif;
+    color: #333;
+}
+
+
+.recuperar input {
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background-color: #222;
+  color: #fff;
+  outline: none;
+  transition: border 0.3s;
+}
+
+.recuperar input:focus {
+  border: 1px solid #007bff;
+}
+
+/* Botón */
+.enviar{
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cancelar{
+  padding: 12px;
+  background-color: #e02306;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.register button:hover {
+  background: #2980b9; /* azul más oscuro */
+}
+
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.recuperar p{
+   margin: 30px 0;
+   font-family: Arial, Helvetica, sans-serif;
+   color: #333;
+}
+
+.input{
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background-color: #222;
+  color: #fff;
+  outline: none;
+  transition: border 0.3s;
+}
+
+
+
+

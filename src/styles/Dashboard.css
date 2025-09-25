@@ -1,0 +1,211 @@
+:root{
+    --blanco:#E0E0E0;
+    --azul-opacidad:#184463;
+    --bg-menu:#003053;
+    --bg-body:#C7E1FF;
+}
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--blanco);
+}
+
+
+.menu-dashboard{
+    position: fixed;       /* <- lo fija a la izquierda */
+    top: 0;                /* desde arriba */
+    left: 0;               /* pegado a la izquierda */
+    max-width: 110px;
+    height: 100vh;
+    border-radius: 0 10px 10px 0;
+    background-color: var(--bg-menu);
+    padding: 15px;
+    transition: max-width .3s ease;
+    z-index: 100;          /* se asegura que quede encima del contenido */
+}
+
+.top-menu{
+    display: flex;
+    align-items:flex-start;
+    justify-content: space-between;
+    margin-top: 20px;
+    height: 30px;
+}
+
+.top-menu .logo{
+    display: flex;
+    align-items: flex-start;
+}
+
+.top-menu .logo img{
+    width: 30px;
+    transition: width .3s ease;
+}
+
+.top-menu .logo span{
+    font-size: 20px;
+    margin-left: 20px;
+    display: none;
+}
+
+.top-menu .toggle{
+    width: 30px;
+    height: 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.top-menu .toggle i{
+    font-size: 28px;
+}
+
+.input-search{
+    width: 100%;
+    margin: 50px 0;
+    background-color: var(--azul-opacidad);
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.input-search i{
+    font-size: 15px;
+    margin-right: 30px;    
+}
+
+.input-search .input-dashboard{
+    border: 1px solid;
+    outline: none;
+    width: 100%;
+    height: 20px;
+    color: var(--blanco);
+    font-size: 15px;
+    display: none;
+}
+
+.menu{
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu .enlace{
+    width: 100px;
+    padding: 12px 0 12px 17px;
+    border-radius: 8px;
+    align-items:center;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all .3s ease;
+    text-decoration: none;   /* quita el subrayado */
+    color: inherit;          /* hereda el color del contenedor (como tu div) */
+    display: flex; 
+}
+
+
+.enlace-cerrar-sesion{
+    width: auto;
+    padding: 10px 0 10px 17px;
+    border-radius: 8px;
+    align-items:center;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all .3s ease;
+    margin-top: 60px;
+    text-decoration: none;   /* quita el subrayado */
+    color: inherit;          /* hereda el color del contenedor (como tu div) */
+    display: flex; 
+}
+
+.enlace-cerrar-sesion span{
+   opacity: 0;
+   transition: opacity .3s ease; 
+}
+
+.enlace-cerrar-sesion i{
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+
+.menu .enlace:hover{
+    background: var(--azul-opacidad);
+}
+
+
+.menu .enlace i{
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+
+.menu .enlace span{
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+
+.menu-dashboard.open .top-menu .logo span{
+    display: block;
+}
+
+
+.menu-dashboard.open .input-search .menu .enlace{
+    width: auto;
+}
+
+.menu-dashboard.open .enlace-cerrar-sesion span{
+    opacity: 1;
+}
+
+.menu-dashboard.open .input-search .input-dashboard{
+    display: block;
+}
+
+.menu-dashboard.open .menu .enlace{
+    width: auto;
+    padding: 20px;
+}
+
+.menu-dashboard.open .menu .enlace span{
+    opacity: 1;
+}
+
+.menu-dashboard.open{
+    max-width: 300px;
+}
+
+
+.main-content {
+  margin-left: 100px; /* ancho cuando el dashboard está cerrado */
+  padding: 20px;
+  width: 205vh;
+  min-height: 100vh;
+  background-color: white;
+  transition: margin-left 0.3s ease;
+}
+
+/* cuando el dashboard está abierto */
+.menu-dashboard.open ~ .main-content {
+  margin-left: 300px; 
+}
+
+.menu-dashboard.open ~ .main-content .table-documentos {
+  margin-left: 100px; 
+}
+
+
+
+
+
+

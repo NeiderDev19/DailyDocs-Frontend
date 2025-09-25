@@ -3,7 +3,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 40px;
     padding: 20px;
 }
 
@@ -28,6 +27,7 @@
     margin-top: 20px;
     margin-bottom: 20px;
     font-size: 28px;
+    color: #222;
 }
 
 .container-register img{
@@ -64,7 +64,7 @@
 
 .regresar{
   padding: 12px;
-  background-color: #414951;
+  background-color: #ff0202;
   color: white;
   border: none;
   border-radius: 8px;
@@ -73,6 +73,3 @@
   transition: 0.3s;
 }
 
-.register button:hover {
-  background: #2980b9; /* azul más oscuro */
-}
