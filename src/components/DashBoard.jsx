@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../styles/DashBoard.css";
+import "../styles/Dashboard.css";
 import { Link } from "react-router-dom";
 
 function DashBoard(){

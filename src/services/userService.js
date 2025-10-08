@@ -1,4 +1,5 @@
 import axios from "axios";
+import api from "./api";
 
 export const getUsuarios = async () => {
   try {
@@ -17,3 +18,12 @@ export const getUsuarios = async () => {
     throw error;
   }
 };
+
+export const getUsuarioById = async (id) => {
+  try {
+     const response = await api.get(`/usuarios/${id}`);
+     return response.data;
+  } catch (error) {
+    console.error(error);
+  }
+}
