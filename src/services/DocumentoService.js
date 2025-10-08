@@ -64,3 +64,48 @@ const res = await api.put(`/documentos?id=${id}` , formData , {
 });
 return res.data;
 }
+
+
+export const getComentariosDocumento = async (id) =>{
+  try {
+    const response = await api.get(`/comentarios/${id}`);
+    return response.data;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+export const addComentarioDocumento = async (idDocumento,idUsuario,content) => {
+  try{
+    const response = await api.post(`/comentarios/document/${idDocumento}?idUsuario=${idUsuario}`,{content})
+    return response.data;
+  }catch(err){
+    console.error(err);
+    throw err;
+  }
+}
+
+export const deleteComentario = async (idComentario) => {
+  try {
+    const response = await api.delete(`/comentarios/delete/${idComentario}`);
+    return response.data;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+}
+
+export const editComentarioDocumento = async (idComentario, texto) => {
+  try {
+    const formData = new FormData();
+    formData.append("texto",texto);
+    const response  = await api.put(`/comentarios/${idComentario}`,formData,{
+      headers : {
+        "Content-Type": "multipart/form-data"
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.error(error);
+  }
+}

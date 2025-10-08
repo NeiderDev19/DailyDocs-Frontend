@@ -187,22 +187,32 @@ body{
 
 
 .main-content {
-  margin-left: 100px; /* ancho cuando el dashboard está cerrado */
+  margin-left: 80px; /* ancho cuando el dashboard está cerrado */
   padding: 20px;
-  width: 205vh;
+  width: auto;
+  max-width: 1290px;
   min-height: 100vh;
-  background-color: white;
   transition: margin-left 0.3s ease;
 }
 
 /* cuando el dashboard está abierto */
 .menu-dashboard.open ~ .main-content {
-  margin-left: 300px; 
+  margin-left: 200px; 
+  max-width: 1100px;
 }
 
 .menu-dashboard.open ~ .main-content .table-documentos {
-  margin-left: 100px; 
+    max-width: 1000px;
 }
+
+.menu-dashboard.open ~ .main-content .chat{
+    max-width: 1100px;
+}
+
+
+
+
+
 
 
 

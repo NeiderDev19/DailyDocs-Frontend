@@ -12,7 +12,11 @@ html, body, #root {
 }
 
 
-body {
-width: 100; 
- background: linear-gradient(135deg, #60a5ea, #d9e4f5);
+.auth-body {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #60a5ea, #d9e4f5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

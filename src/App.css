@@ -12,27 +12,34 @@
 }
 
 
-.main-content{
-    display: flex;
-    justify-content: center;
-}
+
 
 .main-content h2{
     color: black;
 }
 
+.publicaciones{
+  height: 100vh;
+  width: 1150px;
+  margin-top: 10px;
+}
+
+.publicaciones .card {
+  position: sticky;
+  top: 0;               /* siempre pegado arriba */
+  z-index: 1000;        /* para que no lo tape nada */
+  background: white;    /* evita que se vea transparente cuando se superpone */
+}
+
 
 .documentos-grid-horizontal {
-  display: flex;                /* usamos flex para scroll horizontal */
-  flex-wrap: nowrap;            /* los items no saltan a otra fila */
-  /* overflow-x: auto;             habilita scroll horizontal */
-  gap: 1.5rem;                  /* espacio entre cards */
+  display: grid; 
+  grid-template-columns: repeat(auto-fill, minmax(250px, 5fr)); 
+  gap: 1.5rem;
   padding: 1rem;
-  scroll-behavior: smooth;      /* efecto suave al hacer scroll */
 }
 
 .documentos-card {
-  flex: 0 0 300px;              /* ancho fijo de 300px */
   border-radius: 8px;
   box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
   padding: 1rem;
@@ -52,10 +59,9 @@
 .table-documentos{
   display: flex;
   flex-direction: column;
-  justify-content:baseline;
+  justify-content:center;
   align-items: center;
   gap: 45px;
-  margin: 45px;
   width: 1100px;
 }
 
@@ -92,3 +98,12 @@
   padding: 10px;
   text-align: center;
 }
+
+.card-busqueda{
+  background-color: aqua;
+  width: 1100px;
+}
+
+
+
+

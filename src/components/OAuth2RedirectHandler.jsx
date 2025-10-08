@@ -17,7 +17,7 @@ function OAuth2RedirectHandler() {
       localStorage.setItem("role", role);
       localStorage.setItem("id",id);
       console.log(localStorage.getItem("token"))
-      window.location.href = "/app"; // en vez de navigate
+      window.location.href = "/app/documentos"; // en vez de navigate
     } else {
       navigate("/");
     }

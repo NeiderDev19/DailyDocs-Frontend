@@ -1,5 +1,5 @@
 import Login from './components/Login.jsx';
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import './App.css'
 import Register from './components/Register.jsx';
 import EnviarCodigo from './components/EnviarCodigo.jsx';
@@ -12,8 +12,30 @@ import ListaUsuarios from './components/App/ListUsers.jsx';
 import "primeflex/primeflex.css";
 import DocumentosList from './components/App/DocumentosList.jsx';
 import TableDocumentos from './components/App/TableDocumentos.jsx';
+import UserInbox from './components/Chat/UserInbox.jsx';
+import { useEffect } from 'react';
+
+// ⚡ Fix para SockJS en navegador
+window.global ||= window;
 
 function App() {
+
+  const location = useLocation();
+
+
+  useEffect(() => {
+    if (
+      location.pathname === "/" ||
+      location.pathname === "/Register" ||
+      location.pathname === "/enviarCodigo" ||
+      location.pathname === "/verificarCodigo" ||
+      location.pathname === "/cambiarContraseña"
+    ) {
+      document.body.classList.add("auth-body");
+    } else {
+      document.body.classList.remove("auth-body");
+    }
+  }, [location]);
 
 
   return (
@@ -29,6 +51,7 @@ function App() {
         <Route path="usuarios" element={<ListaUsuarios/>} />
         <Route path="documentos" element={<DocumentosList/>} />
         <Route path="documentosid" element={<TableDocumentos/>}/>
+        <Route path="mensajes" element={<UserInbox/>}/>
       </Route>
    </Routes>
   )

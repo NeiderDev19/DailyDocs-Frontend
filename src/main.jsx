@@ -12,7 +12,8 @@ import 'primereact/resources/primereact.min.css';
 
 // Estilos de íconos
 import 'primeicons/primeicons.css';
-
+// ⚡ Fix para SockJS en navegador
+window.global ||= window;
 
 createRoot(document.getElementById('root')).render(
    <React.StrictMode>

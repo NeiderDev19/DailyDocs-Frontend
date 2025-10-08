@@ -5,11 +5,15 @@ import { Column } from "primereact/column";
 import "../../styles/ListaUsuarios.css"
 import { Button } from "primereact/button";
 import { Tag } from 'primereact/tag';
+import { Dialog } from 'primereact/dialog';
+import AdminSend from "../Chat/AdminSend";
 
 const ListaUsuarios = () => {
   const [usuarios, setUsuarios] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [visible,setVisible] = useState(false);
+  const [toUserId,setToUserId] = useState("");
 
   useEffect(() => {
     const fetchUsuarios = async () => {
@@ -38,7 +42,7 @@ const ListaUsuarios = () => {
 
   return (
     <div className="usuarios-container">
-            <h2 className="usuarios-title">Lista de Usuarios</h2>
+            <h2 className="usuarios-title mb-2">Lista de Usuarios</h2>
       <div className="usuarios-card">
         <DataTable
           value={usuarios}
@@ -64,9 +68,13 @@ const ListaUsuarios = () => {
           body={(rowData) => (
             <div className="acciones">
                 <Button 
-                    icon="pi pi-pencil" 
+                    icon="pi pi-send" 
                     className="p-button-rounded p-button-info p-mr-2" 
-                    onClick={() => console.log("Editar", rowData)} 
+                    onClick={() => {
+                      setVisible(true);
+                      setToUserId(rowData.id);
+                    }
+                    } 
                 />
                 <Button 
                     icon="pi pi-trash" 
@@ -78,6 +86,9 @@ const ListaUsuarios = () => {
 
         </DataTable>
       </div>
+       <Dialog header={<div><h4 style={{marginLeft:'14px'}}>Enviar mensaje</h4></div>} visible={visible} position="bottom-right" style={{ width: '50vw' }} onHide={() => {if (!visible) return; setVisible(false); }} draggable={false} resizable={false}>
+          <AdminSend toUserId={toUserId}/>
+      </Dialog>
     </div>
   );
 };

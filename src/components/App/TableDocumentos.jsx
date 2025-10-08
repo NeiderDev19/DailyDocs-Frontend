@@ -114,6 +114,7 @@ const TableDocumentos = () => {
             }else{
             //CREAR
             await subirDocumento(nuevoDocumento,idUser,file);
+            toast.success("Documento creado");
             }
             const id = parseInt(localStorage.getItem("id"), 10); // 👈 importante
             fetchDocumentsId(id);
@@ -141,7 +142,7 @@ const TableDocumentos = () => {
             await deleteDocumento(id);
             const idUser = parseInt(localStorage.getItem("id"), 10); // 👈 importante
             fetchDocumentsId(idUser);
-            toast.error("Documento eliminado");
+            toast.success("Documento eliminado");
         } catch (error) {
             console.error("Error",error);
             throw error;

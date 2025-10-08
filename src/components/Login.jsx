@@ -23,7 +23,7 @@ function Login() {
             localStorage.setItem("id",user.id);
             localStorage.setItem("role", user.role);
             toast.success("usuario logueado");
-            navigate("/app");
+            navigate("/app/documentos");
         } catch (err) {
             toast.error("Credenciales incorrectas",err.response?.data || err.message);
         }
