@@ -29,7 +29,7 @@ function Register(){
     return (
         <div className="container-register">
             <div className="register">
-                <img src="../public/img/image.png" alt="logo" />
+                <img src="/img/image.png" alt="logo" />
                 <h2>Registro</h2>
                 <form onSubmit={handleSubmit}>
                     <input type="text"

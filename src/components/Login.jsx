@@ -33,7 +33,7 @@ function Login() {
         <div className="container">
             <div className="login">
                 <div>
-                <img className="logo" src="../public/img/image.png" alt="logo" />
+                <img className="logo" src="/img/image.png" alt="logo" />
                 </div>
                 <h2 className="">Iniciar Sesión</h2>
                 <div className="header">
